@@ -1,9 +1,0 @@
-﻿[dotenv@17.2.3] injecting env (3) from .env -- tip: ≡ƒöÉ encrypt with Dotenvx: https://dotenvx.com
-Found Anita Reddy: 69bd04f20179336e1397014f (anita.reddy@spritflow.com)
-Found 1 tasks for Anita Reddy:
- - Title: "def" | Status: "Rejected" | Project: "Making Brand Logos" (69c40da01f8f559dc53370e6)
-   Project CreatedBy: 69bcd14a689de7ef4710fb86 | Manager: 69bcd44d68cd1b8eccff1c34
-Rejected tasks count (regex): 1
-
-Total rejected tasks in system: 1
- - Task "def" (Status: Rejected) in Project "Making Brand Logos"
