@@ -1,0 +1,9 @@
+﻿[dotenv@17.2.3] injecting env (5) from .env -- tip: ΓÜÖ∩╕Å  specify custom .env file path with { path: '/custom/path/.env' }
+--- Email Debug Test ---
+EMAIL_USER: 24je0902@iitism.ac.in
+EMAIL_PASS defined: true
+EMAIL_PASS: [idjq vlic thyl kxvo]
+EMAIL_PASS length: 19
+Sending test email...
+SUCCESS! Email sent: 250 2.0.0 OK  1774950923 d2e1a72fcca58-82ca8467824sm9789131b3a.17 - gsmtp
+

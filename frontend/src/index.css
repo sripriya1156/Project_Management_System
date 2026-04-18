@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+:root {
+  font-family: 'Inter', system-ui, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light;
+  
+  /* Light Theme Variables */
+  --bg-color: #f4f7fe;
+  --panel-bg: #ffffff;
+  --primary: #5A32EA;  /* Task Z Purple */
+  --primary-hover: #4c26ce;
+  --text-main: #1f2937;
+  --text-muted: #6b7280;
+  --text-light: #9ca3af;
+  --border-color: #e5e7eb;
+  --input-bg: #ffffff;
+  --card-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  --glass-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+
+  /* Status Colors */
+  --success: #10b981;
+  --success-bg: rgba(16, 185, 129, 0.1);
+  --warning: #f59e0b;
+  --warning-bg: rgba(245, 158, 11, 0.1);
+  --danger: #ef4444;
+  --danger-bg: rgba(239, 68, 68, 0.1);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.dark-theme {
+  color-scheme: dark;
+  
+  /* Dark Theme Variables */
+  --bg-color: #0f172a;
+  --panel-bg: #1e293b;
+  --primary: #818cf8;
+  --primary-hover: #a5b4fc;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --text-light: #64748b;
+  --border-color: #334155;
+  --input-bg: #0f172a;
+  --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  --glass-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+
+  /* Status Colors Adjustments for Dark Mode */
+  --success-bg: rgba(16, 185, 129, 0.2);
+  --warning-bg: rgba(245, 158, 11, 0.2);
+  --danger-bg: rgba(239, 68, 68, 0.2);
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+/* Reset Links */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Reset Buttons */
+button {
+  all: unset;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+/* Base Card Style for Panels */
+.card {
+  background-color: var(--panel-bg);
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  padding: 20px;
+  box-shadow: var(--card-shadow);
+}
+
+/* Status Pills */
+.status-pill {
+  padding: 4px 12px;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+.status-pill.success { background-color: var(--success-bg); color: var(--success); }
+.status-pill.warning { background-color: var(--warning-bg); color: var(--warning); }
+.status-pill.danger { background-color: var(--danger-bg); color: var(--danger); }
+
+/* Typography */
+h1, h2, h3, h4, p {
+  margin: 0;
+  color: var(--text-main);
+}
+
+/* Legacy Support for Login/Signup/Landing */
+.glass-panel {
+  background-color: var(--panel-bg);
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  padding: 40px;
+  margin: 10vh auto;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: var(--glass-shadow);
+}
+.glass-panel input, .glass-panel select {
+  padding: 12px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background-color: var(--input-bg);
+  color: var(--text-main);
+  width: 100%;
+  box-sizing: border-box;
+}
+.glass-panel button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--primary);
+  color: white;
+  border-radius: 8px;
+  font-weight: 600;
+  text-align: center;
+}
+
