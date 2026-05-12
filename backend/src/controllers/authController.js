@@ -155,6 +155,7 @@ exports.forgotPassword = async (req, res) => {
 exports.resetPassword = async (req, res) => {
   const { token } = req.params;
   const { password } = req.body;
+  console.log(`Reset password request received for token: ${token.substring(0, 5)}...`);
   try {
     const hashedToken = crypto.createHash('sha256').update(token).digest('hex');
 
@@ -163,7 +164,10 @@ exports.resetPassword = async (req, res) => {
       resetPasswordExpires: { $gt: Date.now() }
     });
 
-    if (!user) return res.status(400).json({ message: "Invalid or expired token" });
+    if (!user) {
+      console.log('Invalid or expired token used for reset');
+      return res.status(400).json({ message: "Invalid or expired token" });
+    }
 
     user.password = await bcrypt.hash(password, 10);
     user.resetPasswordToken = undefined;
