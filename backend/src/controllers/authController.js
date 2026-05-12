@@ -125,7 +125,7 @@ exports.forgotPassword = async (req, res) => {
 
     const mailOptions = {
       to: user.email,
-      from: 'Spritflow <no-reply@spritflow.com>',
+      from: `Spritflow <${process.env.EMAIL_USER}>`,
       subject: 'Password Reset Request',
       text: `You are receiving this because you (or someone else) have requested the reset of the password for your account.\n\n` +
         `Please click on the following link, or paste this into your browser to complete the process:\n\n` +
@@ -133,12 +133,17 @@ exports.forgotPassword = async (req, res) => {
         `If you did not request this, please ignore this email and your password will remain unchanged.\n`
     };
 
+    console.log(`Attempting to send reset email to: ${user.email}`);
     try {
       await transporter.sendMail(mailOptions);
+      console.log(`Email successfully sent to: ${user.email}`);
       res.status(200).json({ message: "Reset link sent to your email!" });
     } catch (err) {
       console.error('Email send failed:', err.message);
-      res.status(500).json({ message: "Failed to send email. Please try again later." });
+      if (err.code === 'EAUTH') {
+        console.error('Authentication Error: Check EMAIL_USER and EMAIL_PASS.');
+      }
+      res.status(500).json({ message: `Failed to send email: ${err.message}` });
     }
 
   } catch (error) {

@@ -6,15 +6,19 @@ function ForgotPassword() {
     const navigate = useNavigate();
     const [email, setEmail] = useState("");
     const [message, setMessage] = useState("");
+    const [messageType, setMessageType] = useState(""); // "success" or "error"
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         setMessage("");
+        setMessageType("");
         try {
             const res = await API.post("/forgot-password", { email });
             setMessage(res.data.message);
+            setMessageType("success");
         } catch (err) {
             setMessage(err.response?.data?.message || "Error sending email");
+            setMessageType("error");
         }
     };
 
@@ -29,7 +33,19 @@ function ForgotPassword() {
                 <div className="auth-card">
                     <h2 className="auth-title">Forgot Password</h2>
                     <p className="auth-subtitle">Enter your email to receive a reset link</p>
-                    {message && <p style={{ textAlign: 'center', color: '#047660', fontWeight: '600', marginBottom: '20px' }}>{message}</p>}
+                    {message && (
+                        <p style={{ 
+                            textAlign: 'center', 
+                            color: messageType === "success" ? '#10b981' : '#ef4444', 
+                            fontWeight: '700', 
+                            marginBottom: '20px',
+                            background: messageType === "success" ? 'rgba(16, 185, 129, 0.1)' : 'rgba(239, 68, 68, 0.1)',
+                            padding: '12px',
+                            borderRadius: '12px'
+                        }}>
+                            {message}
+                        </p>
+                    )}
                     <form onSubmit={handleSubmit}>
                         <div className="auth-form-group">
                             <label className="auth-label">EMAIL ADDRESS</label>

@@ -841,3 +841,171 @@ textarea.hub-input {
   font-weight: 800;
   letter-spacing: 0.5px;
 }
+
+/* --- Responsive Utilities --- */
+@media (max-width: 1024px) {
+  .hub-hero h2 {
+    font-size: 1.7rem;
+  }
+  
+  .hub-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .project-hub-container, .hub-details-container {
+    padding: 15px;
+  }
+
+  .hub-header {
+    padding: 0 0 15px 0;
+  }
+
+  .hub-hero {
+    padding: 30px 20px;
+  }
+
+  .hub-hero h2 {
+    font-size: 1.5rem;
+  }
+
+  .hub-hero-btns {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hub-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hub-crit-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .auth-card {
+    padding: 30px 20px;
+  }
+
+  .auth-title {
+    font-size: 1.75rem;
+  }
+
+  .auth-specs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hub-form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  /* Responsive Landing Page Classes */
+  .responsive-section {
+    padding: 40px 20px !important;
+    flex-direction: column !important;
+    gap: 30px !important;
+    text-align: center !important;
+  }
+
+  .responsive-hero-text {
+    font-size: 2.5rem !important;
+    letter-spacing: -1px !important;
+    line-height: 1.1 !important;
+  }
+
+  .responsive-grid-3 {
+    grid-template-columns: 1fr !important;
+  }
+
+  .responsive-grid-2 {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+  }
+
+  .responsive-hide {
+    display: none !important;
+  }
+
+  .responsive-stack {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 20px !important;
+  }
+
+  .responsive-full-width {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  
+  .responsive-padding-small {
+    padding: 20px !important;
+  }
+
+  .responsive-header {
+    padding: 10px 15px !important;
+    height: auto !important;
+  }
+
+  .responsive-hero-img {
+    width: 100% !important;
+    margin-top: 20px;
+  }
+
+  .responsive-flex-wrap {
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+  }
+
+  .responsive-stack {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 15px !important;
+    text-align: center !important;
+  }
+
+  .responsive-sidebar {
+    display: none !important;
+  }
+
+  .responsive-main-content {
+    margin-left: 0 !important;
+    padding-bottom: 70px !important; /* Space for bottom nav */
+  }
+
+  .responsive-show {
+    display: flex !important;
+  }
+
+  .responsive-hide {
+    display: none !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .hub-hero h2 {
+    font-size: 1.35rem;
+  }
+
+  .hub-stat-pill {
+    padding: 15px;
+    gap: 12px;
+  }
+
+  .hub-stat-pill .value {
+    font-size: 1.1rem;
+  }
+
+  .auth-card {
+    padding: 25px 15px;
+  }
+
+  .auth-title {
+    font-size: 1.5rem;
+  }
+
+  .hub-assign-card {
+    margin: 20px 10px;
+    padding: 20px 15px;
+  }
+}

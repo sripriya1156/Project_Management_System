@@ -134,3 +134,26 @@ h1, h2, h3, h4, p {
   text-align: center;
 }
 
+/* Global Responsive Adjustments */
+@media (max-width: 768px) {
+  :root {
+    font-size: 14px; /* Scale down base font size for smaller screens */
+  }
+
+  .glass-panel {
+    padding: 25px;
+    margin: 5vh auto;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    font-size: 13px;
+  }
+
+  .glass-panel {
+    padding: 20px;
+    width: 95%;
+  }
+}
+

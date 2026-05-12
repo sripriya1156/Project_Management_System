@@ -41,7 +41,7 @@ function Login() {
     return (
         <div className="auth-container" style={{ background: '#f8fafc', minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
             {/* Navbar */}
-            <header style={{ padding: '20px 50px', background: '#fff', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <header className="responsive-header" style={{ padding: '20px 50px', background: '#fff', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <div style={{ fontSize: '1.4rem', fontWeight: '800', color: '#1e3a8a', cursor: 'pointer' }} onClick={() => navigate('/')}>
                     Spritflow
                 </div>
@@ -56,10 +56,10 @@ function Login() {
 
             {/* Main Auth Card */}
             <main style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '40px 20px' }}>
-                <div style={{ maxWidth: '1200px', width: '100%', background: '#fff', borderRadius: '40px', display: 'flex', overflow: 'hidden', boxShadow: '0 40px 100px rgba(0,0,0,0.08)' }}>
+                <div className="responsive-grid-2" style={{ maxWidth: '1200px', width: '100%', background: '#fff', borderRadius: '40px', display: 'flex', overflow: 'hidden', boxShadow: '0 40px 100px rgba(0,0,0,0.08)' }}>
 
                     {/* Left Panel */}
-                    <div style={{
+                    <div className="responsive-padding-small" style={{
                         flex: 1,
                         background: 'linear-gradient(rgba(30, 58, 138, 0.85), rgba(30, 58, 138, 0.95)), url("https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop") center/cover',
                         padding: '80px 60px',
@@ -69,7 +69,7 @@ function Login() {
                         justifyContent: 'space-between'
                     }}>
                         <div>
-                            <h1 style={{ fontSize: '3.5rem', fontWeight: '900', lineHeight: '1.1', marginBottom: '30px', letterSpacing: '-2px' }}>
+                            <h1 className="responsive-hero-text" style={{ fontSize: '3.5rem', fontWeight: '900', lineHeight: '1.1', marginBottom: '30px', letterSpacing: '-2px' }}>
                                 The kinetic stream of your <span style={{ color: '#10b981' }}>workflow</span>.
                             </h1>
                             <p style={{ fontSize: '1.2rem', color: '#93c5fd', maxWidth: '400px', lineHeight: '1.6' }}>
@@ -89,7 +89,7 @@ function Login() {
                     </div>
 
                     {/* Right Panel */}
-                    <div style={{ flex: 1, padding: '80px 80px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                    <div className="responsive-padding-small" style={{ flex: 1, padding: '80px 80px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                         <h2 style={{ fontSize: '2.5rem', fontWeight: '800', color: '#1e3a8a', marginBottom: '10px' }}>Welcome Back</h2>
                         <p style={{ color: '#64748b', marginBottom: '45px' }}>Please enter your details to access your workspace.</p>
 
@@ -155,9 +155,9 @@ function Login() {
             </main>
 
             {/* Footer */}
-            <footer style={{ padding: '30px 50px', borderTop: '1px solid #e2e8f0', display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.75rem', fontWeight: '700', color: '#94a3b8' }}>
+            <footer className="responsive-stack responsive-padding-small" style={{ padding: '30px 50px', borderTop: '1px solid #e2e8f0', display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.75rem', fontWeight: '700', color: '#94a3b8' }}>
                 <div style={{ color: '#1e3a8a', fontSize: '1.1rem', fontWeight: '900' }}>SPRITFLOW</div>
-                <div style={{ display: 'flex', gap: '25px', letterSpacing: '1px' }}>
+                <div className="responsive-flex-wrap" style={{ display: 'flex', gap: '25px', letterSpacing: '1px' }}>
                     <span style={{ cursor: 'pointer' }}>PRIVACY POLICY</span>
                     <span style={{ cursor: 'pointer' }}>TERMS OF SERVICE</span>
                     <span style={{ cursor: 'pointer' }}>COOKIE SETTINGS</span>

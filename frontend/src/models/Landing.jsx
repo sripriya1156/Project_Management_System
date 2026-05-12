@@ -17,7 +17,7 @@ function Landing() {
   return (
     <div className="auth-container" style={{ background: '#ffffff', overflowX: 'hidden' }}>
       {/* Navbar */}
-      <header className="auth-header" style={{ padding: '20px 50px', background: 'rgba(248, 243, 243, 0.8)', backdropFilter: 'blur(10px)', position: 'sticky', top: 0, zIndex: 100 }}>
+      <header className="auth-header responsive-header" style={{ padding: '20px 50px', background: 'rgba(248, 243, 243, 0.8)', backdropFilter: 'blur(10px)', position: 'sticky', top: 0, zIndex: 100 }}>
         <div className="auth-header-title" style={{ fontSize: '1.4rem', fontWeight: '800', color: '#1e3a8a' }}>
           Spritflow
         </div>
@@ -34,12 +34,12 @@ function Landing() {
       </header>
 
       {/* Hero Section */}
-      <section style={{ padding: '80px 50px', display: 'flex', alignItems: 'center', gap: '50px', maxWidth: '1400px', margin: '0 auto' }}>
+      <section className="responsive-section" style={{ padding: '80px 50px', display: 'flex', alignItems: 'center', gap: '50px', maxWidth: '1400px', margin: '0 auto' }}>
         <div style={{ flex: 1 }}>
           <div style={{ background: '#aac3f7ff', color: '#166534', padding: '6px 14px', borderRadius: '999px', fontSize: '0.75rem', fontWeight: '700', display: 'inline-flex', alignItems: 'center', gap: '8px', marginBottom: '25px' }}>
             <Zap size={14} /> ACCELERATE IN SPRITFLOW
           </div>
-          <h1 style={{ fontSize: '4.5rem', fontWeight: '900', color: '#1e3a8a', lineHeight: '1', marginBottom: '30px', letterSpacing: '-2px' }}>
+          <h1 className="responsive-hero-text" style={{ fontSize: '4.5rem', fontWeight: '900', color: '#1e3a8a', lineHeight: '1', marginBottom: '30px', letterSpacing: '-2px' }}>
             Drive Your Projects to Success
           </h1>
           <p style={{ fontSize: '1.15rem', color: '#64748b', marginBottom: '40px', lineHeight: '1.6', maxWidth: '540px' }}>
@@ -57,17 +57,18 @@ function Landing() {
           <img
             src="/logo.jpg"
             alt="Spritflow Dashboard Illustration"
+            className="responsive-hero-img"
             style={{ width: '100%', borderRadius: '24px', boxShadow: '0 30px 60px rgba(0,0,0,0.1)' }}
           />
         </div>
       </section>
 
       {/* Features Section */}
-      <section style={{ padding: '100px 50px', textAlign: 'center', background: '#f8fafc' }}>
+      <section className="responsive-padding-small" style={{ padding: '100px 50px', textAlign: 'center', background: '#f8fafc' }}>
         <h2 style={{ fontSize: '2.5rem', fontWeight: '800', color: '#1e3a8a', marginBottom: '15px' }}>Precision-Engineered Features</h2>
         <p style={{ color: '#64748b', marginBottom: '60px', fontSize: '1.1rem' }}>Every tool in Spritflow is built to remove friction and enhance your team's natural velocity.</p>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '30px', maxWidth: '1200px', margin: '0 auto' }}>
+        <div className="responsive-grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '30px', maxWidth: '1200px', margin: '0 auto' }}>
           <div style={{ background: '#ffffff', padding: '40px', borderRadius: '20px', textAlign: 'left', boxShadow: '0 4px 20px rgba(0,0,0,0.03)' }}>
             <div style={{ background: '#e0e7ff', color: '#4338ca', width: '50px', height: '50px', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '25px' }}>
               <ShieldCheck size={28} />
@@ -95,7 +96,7 @@ function Landing() {
       </section>
 
       {/* Designed for Human Flow */}
-      <section style={{ padding: '100px 50px', display: 'flex', alignItems: 'center', gap: '80px', maxWidth: '1200px', margin: '0 auto' }}>
+      <section className="responsive-section" style={{ padding: '100px 50px', display: 'flex', alignItems: 'center', gap: '80px', maxWidth: '1200px', margin: '0 auto' }}>
         <div style={{ flex: 1 }}>
           <img
             src="/human_flow.png"
@@ -123,8 +124,8 @@ function Landing() {
       </section>
 
       {/* Efficiency Section */}
-      <section style={{ background: '#1e3a8a', padding: '120px 50px', color: '#ffffff' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'flex', gap: '80px' }}>
+      <section style={{ background: '#1e3a8a', padding: '120px 50px', color: '#ffffff' }} className="responsive-padding-small">
+        <div className="responsive-section" style={{ maxWidth: '1200px', margin: '0 auto', display: 'flex', gap: '80px' }}>
           <div style={{ flex: 1 }}>
             <div style={{ color: '#93c5fd', fontSize: '0.75rem', fontWeight: '800', letterSpacing: '2px', marginBottom: '20px' }}>SPRITFLOW METRICS</div>
             <h2 style={{ fontSize: '3rem', fontWeight: '800', marginBottom: '30px', lineHeight: '1.1' }}>Efficiency Meets Transparency</h2>
@@ -137,7 +138,7 @@ function Landing() {
             </div>
           </div>
 
-          <div style={{ flex: 1.5, display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px' }}>
+          <div className="responsive-grid-3" style={{ flex: 1.5, display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px' }}>
             {[
               { label: 'FASTER DELIVERY', value: '35%', icon: <Zap size={20} /> },
               { label: 'VISIBILITY', value: 'Full', icon: <Eye size={20} /> },
@@ -157,8 +158,8 @@ function Landing() {
       </section>
 
       {/* Ready Section */}
-      <section style={{ padding: '120px 50px', textAlign: 'center' }}>
-        <div style={{ maxWidth: '900px', margin: '0 auto', background: '#ffffff', border: '1px solid #f1f5f9', borderRadius: '32px', padding: '80px 40px', boxShadow: '0 40px 100px rgba(0,0,0,0.05)' }}>
+      <section className="responsive-padding-small" style={{ padding: '120px 50px', textAlign: 'center' }}>
+        <div className="responsive-padding-small" style={{ maxWidth: '900px', margin: '0 auto', background: '#ffffff', border: '1px solid #f1f5f9', borderRadius: '32px', padding: '80px 40px', boxShadow: '0 40px 100px rgba(0,0,0,0.05)' }}>
           <h2 style={{ fontSize: '3rem', fontWeight: '800', color: '#1e3a8a', marginBottom: '20px' }}>Ready to find your flow?</h2>
           <p style={{ color: '#64748b', fontSize: '1.2rem', marginBottom: '45px', maxWidth: '500px', margin: '0 auto 45px' }}>
             Join 50,000+ teams who have replaced chaos with Spritflow's kinetic workspace.
@@ -177,8 +178,8 @@ function Landing() {
       </section>
 
       {/* Footer */}
-      <footer style={{ padding: '80px 50px 40px', background: '#ffffff', borderTop: '1px solid #f1f5f9' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '60px' }}>
+      <footer className="responsive-padding-small" style={{ padding: '80px 50px 40px', background: '#ffffff', borderTop: '1px solid #f1f5f9' }}>
+        <div className="responsive-stack" style={{ maxWidth: '1200px', margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '60px' }}>
           <div>
             <div style={{ fontSize: '1.5rem', fontWeight: '900', color: '#1e3a8a', marginBottom: '20px' }}>Spritflow</div>
             <p style={{ color: '#94a3b8', fontSize: '0.85rem' }}>© 2024 SPRITFLOW INC. ALL RIGHTS RESERVED.</p>
@@ -213,12 +214,12 @@ function Landing() {
             </div>
           </div>
         </div>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'flex', justifyContent: 'space-between', color: '#cbd5e1', fontSize: '0.75rem', fontWeight: '700' }}>
-          <div style={{ display: 'flex', gap: '30px' }}>
+        <div className="responsive-stack" style={{ maxWidth: '1200px', margin: '0 auto', display: 'flex', justifyContent: 'space-between', color: '#cbd5e1', fontSize: '0.75rem', fontWeight: '700' }}>
+          <div className="responsive-flex-wrap" style={{ display: 'flex', gap: '30px' }}>
             <span>PRIVACY POLICY</span>
             <span>TERMS OF SERVICE</span>
           </div>
-          <div style={{ display: 'flex', gap: '30px' }}>
+          <div className="responsive-flex-wrap" style={{ display: 'flex', gap: '30px' }}>
             <span>TWITTER</span>
             <span>LINKEDIN</span>
             <span>GITHUB</span>

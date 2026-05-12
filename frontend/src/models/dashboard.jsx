@@ -71,8 +71,8 @@ const AdminDashboard = () => {
   if (loading) return <div style={{ padding: '40px', textAlign: 'center', color: '#64748b' }}>Establishing Node Presence...</div>;
 
   return (
-    <div style={{ maxWidth: '1600px', margin: '0 auto' }}>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '32px' }}>
+    <div className="responsive-full-width" style={{ maxWidth: '1600px', margin: '0 auto' }}>
+      <div className="responsive-stack" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '32px' }}>
         <div>
           <h1 style={{ fontSize: '1.8rem', fontWeight: 800, color: '#0f172a', margin: 0 }}>Operational Overview</h1>
           <p style={{ fontSize: '0.9rem', color: '#64748b', marginTop: '6px', fontWeight: 600 }}>Global enterprise ecosystem monitoring.</p>
@@ -82,14 +82,14 @@ const AdminDashboard = () => {
         </button>
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '24px', marginBottom: '48px' }}>
+      <div className="responsive-grid-2" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '24px', marginBottom: '48px' }}>
         <StatCard icon={<Zap size={20} />} label="ACTIVE PROJECTS" value={data.activeProjects.length} status="ON TRACK" bgColor="#fffaf4" color="#f59e0b" progress={75} onClick={() => navigate('/active-projects')} />
         <StatCard icon={<CheckCircle size={20} />} label="COMPLETED PROJECTS" value={data.completedProjects.length} status="SUCCESS" bgColor="#f4fdfa" color="#10b981" progress={100} onClick={() => navigate('/completed-projects')} />
         <StatCard icon={<XCircle size={20} />} label="REJECTED PROJECTS" value={data.rejectedProjects.length} status="REQUIRES ACTION" bgColor="#fff5f5" color="#ef4444" progress={0} onClick={() => navigate('/rejected-projects')} />
         <StatCard icon={<MoreHorizontal size={20} />} label="PENDING APPROVALS" value={data.pendingApprovals.length} status="ATTENTION" bgColor="#f7f5ff" color="#8b5cf6" progress={40} />
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: '1.8fr 1fr', gap: '32px', marginBottom: '48px' }}>
+      <div className="responsive-grid-2" style={{ display: 'grid', gridTemplateColumns: '1.8fr 1fr', gap: '32px', marginBottom: '48px' }}>
         <div style={{ background: 'white', borderRadius: '24px', padding: '32px', border: '1px solid #f1f5f9' }}>
           <h3 style={{ fontSize: '1.3rem', fontWeight: 800, marginBottom: '24px', color: '#0f172a' }}>Project Schedule</h3>
           <table style={{ width: '100%', borderCollapse: 'collapse' }}>
@@ -265,7 +265,7 @@ const EmployeeDashboard = () => {
   });
 
   return (
-    <div style={{ maxWidth: '1600px', margin: '0 auto' }}>
+    <div className="responsive-full-width" style={{ maxWidth: '1600px', margin: '0 auto' }}>
 
       <div style={{ marginBottom: '32px' }}>
         <h1 style={{ fontSize: '2.2rem', fontWeight: 800, color: '#0f172a', margin: 0, letterSpacing: '-1.5px' }}>
@@ -277,14 +277,14 @@ const EmployeeDashboard = () => {
       </div>
 
       {/* Top Stat Row */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '20px', marginBottom: '48px' }}>
+      <div className="responsive-grid-2" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '20px', marginBottom: '48px' }}>
         <StatTile title="ACTIVE PROJECTS" value={data.projects.length} icon={<Briefcase size={18} />} bgColor="#fffaf4" accentColor="#f59e0b" onClick={() => navigate('/active-projects')} />
         <StatTile title="MANAGED PROJECTS" value={data.managedProjects.length} icon={<ShieldCheck size={18} />} bgColor="#f7f5ff" accentColor="#8b5cf6" onClick={() => navigate('/managed-projects')} />
         <StatTile title="COMPLETED PROJECTS" value={data.completedProjects.length} icon={<CheckCircle size={18} />} bgColor="#f4fdfa" accentColor="#10b981" onClick={() => navigate('/completed-projects')} />
         <StatTile title="REJECTED PROJECTS" value={data.rejectedProjects.length} icon={<XCircle size={18} />} bgColor="#fff5f5" accentColor="#ef4444" onClick={() => navigate('/rejected-projects')} />
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: '1.8fr 1fr', gap: '32px' }}>
+      <div className="responsive-grid-2" style={{ display: 'grid', gridTemplateColumns: '1.8fr 1fr', gap: '32px' }}>
 
         <div>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
@@ -292,7 +292,7 @@ const EmployeeDashboard = () => {
             <button onClick={() => navigate('/active-projects')} style={{ color: '#3b82f6', fontWeight: 800, border: 'none', background: 'none', cursor: 'pointer', fontSize: '0.85rem' }}>View All</button>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px', marginBottom: '40px' }}>
+          <div className="responsive-grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px', marginBottom: '40px' }}>
             {data.projects.slice(0, 4).map(proj => (
               <ProjectCardMockup key={proj._id} project={proj} onClick={() => navigate(`/project/${proj._id}`)} />
             ))}
@@ -304,7 +304,7 @@ const EmployeeDashboard = () => {
             <button onClick={() => navigate('/completed-projects')} style={{ color: '#10b981', fontWeight: 800, border: 'none', background: 'none', cursor: 'pointer', fontSize: '0.85rem' }}>View All</button>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px' }}>
+          <div className="responsive-grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px' }}>
             {data.completedProjects.slice(0, 2).map(proj => (
               <ProjectCardMockup key={proj._id} project={proj} statusColor="#10b981" onClick={() => navigate(`/project/${proj._id}`)} />
             ))}

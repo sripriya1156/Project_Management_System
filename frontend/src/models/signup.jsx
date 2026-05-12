@@ -55,7 +55,7 @@ function Signup() {
 
     return (
         <div className="auth-container" style={{ background: '#f8fafc', minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
-            <header style={{ padding: '20px 50px', background: '#fff', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <header className="responsive-header" style={{ padding: '20px 50px', background: '#fff', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <div style={{ fontSize: '1.4rem', fontWeight: '800', color: '#1e3a8a', cursor: 'pointer' }} onClick={() => navigate('/')}>
                     Spritflow
                 </div>
@@ -65,9 +65,9 @@ function Signup() {
             </header>
 
             <main style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '40px 20px' }}>
-                <div style={{ maxWidth: '1200px', width: '100%', background: '#fff', borderRadius: '40px', display: 'flex', overflow: 'hidden', boxShadow: '0 40px 100px rgba(0,0,0,0.08)' }}>
+                <div className="responsive-grid-2" style={{ maxWidth: '1200px', width: '100%', background: '#fff', borderRadius: '40px', display: 'flex', overflow: 'hidden', boxShadow: '0 40px 100px rgba(0,0,0,0.08)' }}>
                     
-                    <div style={{ 
+                    <div className="responsive-padding-small" style={{ 
                         flex: 0.8, 
                         background: 'linear-gradient(rgba(30, 58, 138, 0.9), rgba(30, 58, 138, 0.95)), url("https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop") center/cover', 
                         padding: '60px', 
@@ -77,7 +77,7 @@ function Signup() {
                         justifyContent: 'space-between' 
                     }}>
                         <div>
-                            <h1 style={{ fontSize: '3rem', fontWeight: '900', lineHeight: '1.1', marginBottom: '25px', letterSpacing: '-1.5px' }}>
+                            <h1 className="responsive-hero-text" style={{ fontSize: '3rem', fontWeight: '900', lineHeight: '1.1', marginBottom: '25px', letterSpacing: '-1.5px' }}>
                                 Join the elite stream of <span style={{ color: '#10b981' }}>excellence</span>.
                             </h1>
                             <p style={{ fontSize: '1.1rem', color: '#93c5fd', lineHeight: '1.6' }}>
@@ -99,12 +99,12 @@ function Signup() {
                         </div>
                     </div>
 
-                    <div style={{ flex: 1.2, padding: '60px 80px', height: 'auto', overflowY: 'auto' }}>
+                    <div className="responsive-padding-small" style={{ flex: 1.2, padding: '60px 80px', height: 'auto', overflowY: 'auto' }}>
                         <h2 style={{ fontSize: '2.2rem', fontWeight: '800', color: '#1e3a8a', marginBottom: '10px' }}>Create Account</h2>
                         <p style={{ color: '#64748b', marginBottom: '40px' }}>Join 50,000+ professionals today.</p>
 
-                        <form onSubmit={handleSubmit} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
-                            <div style={{ gridColumn: 'span 2' }}>
+                        <form onSubmit={handleSubmit} className="responsive-grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
+                            <div className="responsive-full-width" style={{ gridColumn: 'span 2' }}>
                                 <label style={{ display: 'block', fontSize: '0.7rem', fontWeight: '800', color: '#1e3a8a', marginBottom: '8px', letterSpacing: '1px' }}>FULL NAME</label>
                                 <div style={{ position: 'relative' }}>
                                     <User style={{ position: 'absolute', left: '16px', top: '50%', transform: 'translateY(-50%)', color: '#94a3b8' }} size={18} />
@@ -112,7 +112,7 @@ function Signup() {
                                 </div>
                             </div>
 
-                            <div style={{ gridColumn: 'span 2' }}>
+                            <div className="responsive-full-width" style={{ gridColumn: 'span 2' }}>
                                 <label style={{ display: 'block', fontSize: '0.7rem', fontWeight: '800', color: '#1e3a8a', marginBottom: '8px', letterSpacing: '1px' }}>EMAIL ADDRESS</label>
                                 <div style={{ position: 'relative' }}>
                                     <Mail style={{ position: 'absolute', left: '16px', top: '50%', transform: 'translateY(-50%)', color: '#94a3b8' }} size={18} />
@@ -120,7 +120,7 @@ function Signup() {
                                 </div>
                             </div>
 
-                            <div>
+                            <div className="responsive-full-width">
                                 <label style={{ display: 'block', fontSize: '0.7rem', fontWeight: '800', color: '#1e3a8a', marginBottom: '8px', letterSpacing: '1px' }}>PASSWORD</label>
                                 <div style={{ position: 'relative' }}>
                                     <Lock style={{ position: 'absolute', left: '16px', top: '50%', transform: 'translateY(-50%)', color: '#94a3b8' }} size={18} />
@@ -128,7 +128,7 @@ function Signup() {
                                 </div>
                             </div>
 
-                            <div>
+                            <div className="responsive-full-width">
                                 <label style={{ display: 'block', fontSize: '0.7rem', fontWeight: '800', color: '#1e3a8a', marginBottom: '8px', letterSpacing: '1px' }}>CONFIRM</label>
                                 <div style={{ position: 'relative' }}>
                                     <Lock style={{ position: 'absolute', left: '16px', top: '50%', transform: 'translateY(-50%)', color: '#94a3b8' }} size={18} />
@@ -136,9 +136,9 @@ function Signup() {
                                 </div>
                             </div>
 
-                            <div style={{ gridColumn: 'span 2' }}>
+                            <div className="responsive-full-width" style={{ gridColumn: 'span 2' }}>
                                 <label style={{ display: 'block', fontSize: '0.7rem', fontWeight: '800', color: '#1e3a8a', marginBottom: '15px', letterSpacing: '1px' }}>SPECIALIZATIONS</label>
-                                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
+                                <div className="responsive-grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
                                     {specializations.map((spec) => (
                                         <label key={spec} style={{ display: 'flex', alignItems: 'center', gap: '10px', background: '#f8fafc', padding: '12px', borderRadius: '8px', border: '1px solid #e2e8f0', fontSize: '0.85rem', cursor: 'pointer', color: '#475569' }}>
                                             <input type="checkbox" value={spec} checked={form.specialization.includes(spec)} onChange={handleChange} style={{ accentColor: '#1e3a8a' }} />
@@ -148,7 +148,7 @@ function Signup() {
                                 </div>
                             </div>
 
-                            <button type="submit" style={{ gridColumn: 'span 2', background: '#1e3a8a', color: '#fff', padding: '18px', borderRadius: '12px', border: 'none', fontSize: '1rem', fontWeight: '700', marginTop: '10px', cursor: 'pointer' }}>
+                            <button type="submit" className="responsive-full-width" style={{ gridColumn: 'span 2', background: '#1e3a8a', color: '#fff', padding: '18px', borderRadius: '12px', border: 'none', fontSize: '1rem', fontWeight: '700', marginTop: '10px', cursor: 'pointer' }}>
                                 Create Account
                             </button>
                         </form>
@@ -156,9 +156,9 @@ function Signup() {
                 </div>
             </main>
 
-            <footer style={{ padding: '30px 50px', borderTop: '1px solid #e2e8f0', display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.75rem', fontWeight: '700', color: '#94a3b8' }}>
+            <footer className="responsive-stack responsive-padding-small" style={{ padding: '30px 50px', borderTop: '1px solid #e2e8f0', display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.75rem', fontWeight: '700', color: '#94a3b8' }}>
                 <div style={{ color: '#1e3a8a', fontSize: '1.1rem', fontWeight: '900' }}>SPRITFLOW</div>
-                <div style={{ display: 'flex', gap: '25px', letterSpacing: '1px' }}>
+                <div className="responsive-flex-wrap" style={{ display: 'flex', gap: '25px', letterSpacing: '1px' }}>
                     <span style={{ cursor: 'pointer' }}>PRIVACY POLICY</span>
                     <span style={{ cursor: 'pointer' }}>TERMS OF SERVICE</span>
                     <span style={{ cursor: 'pointer' }}>HELP CENTER</span>

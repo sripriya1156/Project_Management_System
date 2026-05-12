@@ -71,7 +71,7 @@ const Layout = () => {
     <div style={{ display: 'flex', minHeight: '100vh', backgroundColor: '#f4f7fe', color: '#1a237e' }}>
       
       {/* Sidebar - Reduced Width Vibrant Indigo Theme */}
-      <aside style={{ 
+      <aside className="responsive-sidebar" style={{ 
         width: '280px', 
         backgroundColor: '#121e78', 
         color: '#fff',
@@ -171,10 +171,10 @@ const Layout = () => {
       </aside>
 
       {/* Main Content Area */}
-      <div style={{ flex: 1, marginLeft: '280px' }}>
+      <div className="responsive-main-content" style={{ flex: 1, marginLeft: '280px' }}>
         
         {/* Top Header */}
-        <header style={{ 
+        <header className="responsive-header" style={{ 
           height: '80px', 
           background: 'white', 
           display: 'flex', 
@@ -186,7 +186,7 @@ const Layout = () => {
           top: 0,
           zIndex: 900
         }}>
-          <div>
+          <div className="responsive-hide">
             <h1 style={{ fontSize: '1.2rem', fontWeight: 800, color: '#0a1629', margin: 0 }}>
                {location.pathname === '/dashboard' ? 'Node Overview' : 
                 navItems.find(i => i.path === location.pathname)?.name || 'Project System'}
@@ -226,9 +226,26 @@ const Layout = () => {
           </div>
         </header>
 
-        <main style={{ padding: '40px', background: '#f4f7fe', minHeight: 'calc(100vh - 80px)' }}>
+        <main className="responsive-padding-small" style={{ padding: '40px', background: '#f4f7fe', minHeight: 'calc(100vh - 80px)' }}>
           <Outlet />
         </main>
+        
+        {/* Mobile Bottom Nav */}
+        <div className="hub-bottom-nav responsive-show" style={{ display: 'none' }}>
+          {navItems.slice(0, 5).map(item => {
+            const isActive = location.pathname === item.path;
+            return (
+              <div 
+                key={item.name} 
+                className={`hub-nav-item ${isActive ? 'active' : ''}`}
+                onClick={() => navigate(item.path)}
+              >
+                <item.icon size={20} />
+                <span>{item.name}</span>
+              </div>
+            );
+          })}
+        </div>
       </div>
     </div>
   );

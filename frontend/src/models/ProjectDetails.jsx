@@ -123,9 +123,9 @@ function ProjectDetails() {
 
   return (
     <div style={{ background: '#f8fafc', minHeight: '100vh', color: '#1e293b' }}>
-      <div style={{ padding: '0 40px 60px 40px', maxWidth: '1600px', margin: '0 auto' }}>
+      <div className="responsive-padding-small" style={{ padding: '0 40px 60px 40px', maxWidth: '1600px', margin: '0 auto' }}>
         {/* Top Navbar Simulation */}
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '40px', background: 'transparent', padding: '15px 0', borderBottom: '1px solid #f1f5f9', position: 'sticky', top: 0, zIndex: 100 }}>
+        <div className="responsive-stack responsive-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '40px', background: 'transparent', padding: '15px 0', borderBottom: '1px solid #f1f5f9', position: 'sticky', top: 0, zIndex: 100 }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '24px' }}>
           <button onClick={() => navigate('/dashboard')} style={{ display: 'flex', alignItems: 'center', gap: '8px', border: 'none', background: 'transparent', cursor: 'pointer', color: '#64748b', fontWeight: 600 }}>
             <ArrowLeft size={20} /> Dashboard
@@ -133,13 +133,13 @@ function ProjectDetails() {
           <div style={{ width: '1px', height: '24px', background: '#e2e8f0' }} />
           <span style={{ fontWeight: 800, fontSize: '1.2rem', color: '#0f172a' }}>Project Details</span>
         </div>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
-          <div style={{ position: 'relative' }}>
-            <Search size={18} style={{ position: 'absolute', left: '12px', top: '50%', transform: 'translateY(-50%)', color: '#94a3b8' }} />
-            <input type="text" placeholder="Search resources..." style={{ padding: '10px 15px 10px 40px', borderRadius: '12px', border: '1px solid #f1f5f9', background: '#f8fafc', fontSize: '0.85rem', width: '250px' }} />
+          <div className="responsive-hide" style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
+            <div style={{ position: 'relative' }}>
+              <Search size={18} style={{ position: 'absolute', left: '12px', top: '50%', transform: 'translateY(-50%)', color: '#94a3b8' }} />
+              <input type="text" placeholder="Search resources..." style={{ padding: '10px 15px 10px 40px', borderRadius: '12px', border: '1px solid #f1f5f9', background: '#f8fafc', fontSize: '0.85rem', width: '250px' }} />
+            </div>
+            <Bell size={20} color="#64748b" style={{ cursor: 'pointer' }} />
           </div>
-          <Bell size={20} color="#64748b" style={{ cursor: 'pointer' }} />
-        </div>
       </div>
 
       {message && (
@@ -162,10 +162,10 @@ function ProjectDetails() {
       )}
 
       {/* Header Project Info */}
-      <div style={{ marginBottom: '40px', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+      <div className="responsive-stack" style={{ marginBottom: '40px', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
         <div style={{ flex: 1 }}>
           <span style={{ fontSize: '0.75rem', fontWeight: 800, color: '#3b82f6', textTransform: 'uppercase', letterSpacing: '1px' }}>Enterprise Workspace</span>
-          <h1 style={{ fontSize: '2.2rem', fontWeight: 900, color: '#0f172a', margin: '6px 0 12px 0', letterSpacing: '-1.5px' }}>{project.projectName}</h1>
+          <h1 className="responsive-hero-text" style={{ fontSize: '2.2rem', fontWeight: 900, color: '#0f172a', margin: '6px 0 12px 0', letterSpacing: '-1.5px' }}>{project.projectName}</h1>
           <p style={{ fontSize: '0.95rem', color: '#64748b', maxWidth: '800px', lineHeight: 1.5, fontWeight: 600 }}>{project.description}</p>
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
@@ -177,7 +177,7 @@ function ProjectDetails() {
         </div>
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: '1.8fr 1fr', gap: '32px', marginBottom: '60px' }}>
+      <div className="responsive-grid-2" style={{ display: 'grid', gridTemplateColumns: '1.8fr 1fr', gap: '32px', marginBottom: '60px' }}>
         
         {/* LEFT COLUMN: Assign Form (Manager) or My Tasks (Member) */}
         <div style={{ background: 'white', borderRadius: '32px', padding: '32px', border: '1px solid #f1f5f9', boxShadow: '0 4px 20px rgba(0,0,0,0.02)' }}>
@@ -185,7 +185,7 @@ function ProjectDetails() {
             <div id="assign-section">
               <h2 style={{ fontSize: '1.3rem', fontWeight: 800, color: '#0f172a', marginBottom: '24px' }}>Assign New Task</h2>
               <form onSubmit={handleAssignTask} style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px' }}>
+                <div className="responsive-grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px' }}>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                     <label style={{ fontSize: '0.75rem', fontWeight: 800, color: '#94a3b8', textTransform: 'uppercase' }}>Assignee</label>
                     <select 
@@ -353,7 +353,7 @@ function ProjectDetails() {
           <div style={{ height: '2px', flex: 1, background: '#f1f5f9' }} />
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '24px' }}>
+        <div className="responsive-grid-2" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '24px' }}>
           {tasks.map(task => {
             const statusStyle = {
               'Completed': { bar: '#10b981', pill: '#f0fdf4', text: '#166534', label: 'DONE' },

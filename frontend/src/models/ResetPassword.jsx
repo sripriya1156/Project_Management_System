@@ -8,19 +8,25 @@ function ResetPassword() {
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
     const [message, setMessage] = useState("");
+    const [messageType, setMessageType] = useState(""); // "success" or "error"
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setMessage("");
+        setMessageType("");
         if (password !== confirmPassword) {
-            alert("Passwords do not match");
+            setMessage("Passwords do not match");
+            setMessageType("error");
             return;
         }
         try {
             const res = await API.post(`/reset-password/${token}`, { password });
-            alert(res.data.message);
-            navigate('/login');
+            setMessage(res.data.message);
+            setMessageType("success");
+            setTimeout(() => navigate('/login'), 2000);
         } catch (err) {
             setMessage(err.response?.data?.message || "Error resetting password");
+            setMessageType("error");
         }
     };
 
@@ -35,7 +41,19 @@ function ResetPassword() {
                 <div className="auth-card">
                     <h2 className="auth-title">Reset Password</h2>
                     <p className="auth-subtitle">Enter your new password below</p>
-                    {message && <p style={{ textAlign: 'center', color: '#ef4444', fontWeight: '600', marginBottom: '20px' }}>{message}</p>}
+                    {message && (
+                        <p style={{ 
+                            textAlign: 'center', 
+                            color: messageType === "success" ? '#10b981' : '#ef4444', 
+                            fontWeight: '700', 
+                            marginBottom: '20px',
+                            background: messageType === "success" ? 'rgba(16, 185, 129, 0.1)' : 'rgba(239, 68, 68, 0.1)',
+                            padding: '12px',
+                            borderRadius: '12px'
+                        }}>
+                            {message}
+                        </p>
+                    )}
                     <form onSubmit={handleSubmit}>
                         <div className="auth-form-group">
                             <label className="auth-label">NEW PASSWORD</label>
