@@ -112,7 +112,7 @@ exports.forgotPassword = async (req, res) => {
 
     await user.save();
 
-    const resetUrl = `http://localhost:5173/reset-password/${resetToken}`;
+    const resetUrl = `https://project-management-system-swart-psi.vercel.app/reset-password/${resetToken}`;
 
     // For security, do not log the reset URL or credentials in production
     const transporter = nodemailer.createTransport({
