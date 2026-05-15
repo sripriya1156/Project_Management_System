@@ -31,11 +31,15 @@ exports.login = async (req, res) => {
 
     const whitelist = getWhitelist();
     if (!whitelist.includes(email)) {
+      console.warn(`Login attempt with non-whitelisted email: ${email}`);
       return res.status(401).json({ message: "Email is not in the Employee's list." });
     }
 
     const user = await User.findOne({ email });
-    if (!user) return res.status(401).json({ message: "Invalid email" });
+    if (!user) {
+      console.warn(`Login attempt for whitelisted but non-existent user: ${email}`);
+      return res.status(401).json({ message: "Invalid email" });
+    }
 
 
     const isMatch = await bcrypt.compare(password, user.password);
