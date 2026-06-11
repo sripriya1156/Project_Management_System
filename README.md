@@ -180,19 +180,3 @@ npm run dev
 - EMAIL_PASS  
 
 ---
-
-## License
-
-ISC License  
-
----
-
-## Author
-
-Kala Vishnu Sri Priya  
-
----
-
-## Support
-
-If you find this useful, consider starring the repository.
